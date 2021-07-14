@@ -118,26 +118,5 @@ hemisphere_image_urls = [
 hemisphere_image_urls
 
 
-# In[21]:
-
-
-get_ipython().system('pip install ipython')
-
-
-# In[23]:
-
-
-get_ipython().system('pip install nbconvert')
-
-
-# In[25]:
-
-
-jupyter nbconvert--to script [mission_to_mars].ipynb
-
-
-# In[ ]:
-
-
 
 
