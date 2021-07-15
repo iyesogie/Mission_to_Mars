@@ -2,7 +2,9 @@
 # coding: utf-8
 
 
-# In[2]:
+
+
+# In[18]:
 
 
 from splinter import Browser
@@ -12,21 +14,21 @@ import time
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-# In[3]:
+# In[19]:
 
 
 executable_path = {'executable_path': ChromeDriverManager().install()}
 browser = Browser('chrome', **executable_path, headless=False)
 
 
-# In[4]:
+# In[20]:
 
 
 # Open browser to NASA Mars News Site
 browser.visit('https://mars.nasa.gov/news/')
 
 
-# In[5]:
+# In[21]:
 
 
 html = browser.html
@@ -43,7 +45,7 @@ print(news_p)
    
 
 
-# In[6]:
+# In[22]:
 
 
 # Set up Splinter
@@ -51,21 +53,21 @@ executable_path = {'executable_path': ChromeDriverManager().install()}
 browser = Browser('chrome', **executable_path, headless=False)
 
 
-# In[7]:
+# In[23]:
 
 
 # Open browser to JPL Featured Image
 browser.visit('https://spaceimages-mars.com')
 
 
-# In[8]:
+# In[24]:
 
 
 # Click through to find full image
 browser.click_link_by_partial_text('FULL IMAGE')
 
 
-# In[9]:
+# In[25]:
 
 
 featured_image_path = soup.find_all('img')[2]["src"]
@@ -73,13 +75,13 @@ featured_image_url = 'https://spaceimages-mars.com'+ featured_image_path
 print(featured_image_url)
 
 
-# In[10]:
+# In[26]:
 
 
 import pandas as pd
 
 
-# In[11]:
+# In[27]:
 
 
 url = 'https://galaxyfacts-mars.com/'
@@ -90,7 +92,7 @@ MarsFacts_df = df.rename(columns={0: "MarsFacts_name", 1: "MarsFacts_value"}, er
 MarsFacts_df.head()
 
 
-# In[12]:
+# In[28]:
 
 
 # Convert table to html
@@ -98,7 +100,7 @@ mars_facts_table = [df.to_html(classes='data table table-borderless', index=Fals
 mars_facts_table
 
 
-# In[15]:
+# In[29]:
 
 
 # Store data in a dictionary
@@ -109,6 +111,34 @@ hemisphere_image_urls = [
     {"title": "Valles Marineris Hemisphere", "img_url": "https://marshemispheres.com/images/valles_marineris_enhanced-full.jpg"},
 ]
 hemisphere_image_urls
+
+
+# In[31]:
+
+
+FinalDictionary ={
+    'news_title':news_title,
+    'news_p': news_p,
+    'featured_image_url' : featured_image_url,
+    "tables":tables,
+    'hemisphere' : hemisphere_image_urls
+}
+FinalDictionary
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
 
 
 
