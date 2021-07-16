@@ -1,16 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-get_ipython().system('pip install webdriver_manager')
-get_ipython().system('pip install splinter')
-get_ipython().system('pip install bs4')
-
-
-# In[16]:
-
 
 from splinter import Browser
 from bs4 import BeautifulSoup as bs
