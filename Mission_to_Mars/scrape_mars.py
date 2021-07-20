@@ -1,4 +1,6 @@
 
+
+
 from splinter import Browser
 from bs4 import BeautifulSoup as bs
 import pandas as pd
@@ -6,21 +8,21 @@ import time
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-# In[17]:
+# In[3]:
 
 
 executable_path = {'executable_path': ChromeDriverManager().install()}
 browser = Browser('chrome', **executable_path, headless=False)
 
 
-# In[18]:
+# In[4]:
 
 
 # Open browser to NASA Mars News Site
 browser.visit('https://mars.nasa.gov/news/')
 
 
-# In[19]:
+# In[6]:
 
 
 html = browser.html
@@ -42,7 +44,7 @@ print(news_p)
    
 
 
-# In[20]:
+# In[7]:
 
 
 # Set up Splinter
@@ -50,14 +52,14 @@ executable_path = {'executable_path': ChromeDriverManager().install()}
 browser = Browser('chrome', **executable_path, headless=False)
 
 
-# In[21]:
+# In[13]:
 
 
 # Open browser to JPL Featured Image
 browser.visit('https://spaceimages-mars.com')
 
 
-# In[22]:
+# In[14]:
 
 
 # Click through to find full image
@@ -127,5 +129,23 @@ FinalDictionary ={
     "tables":tables,
     'hemisphere' : hemisphere_image_urls
 }
+FinalDictionary
+
+
+# In[33]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
 
 
